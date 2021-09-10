@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <color name="close_text_yes_background">#333</color>
+    <color name="close_text_no_background">#DBDBDB</color>
+    <color name="close_text_message_background">@color/grey</color>
+
+    <color name="close_ad_background">#ddd</color>
+
+    <color name="contact_edit_placeholder_color">@color/grey</color>
+
+    <color name="color_main_primary">#0097A7</color>
+
+    <color name="icon_color">@color/color_transparent</color>
+    <color name="menu_icon_color">#707070</color>
+
+    <color name="search_background_color">#eee</color>
+    <color name="search_icon_color">#aaa</color>
+    <color name="search_text_color">#333</color>
+
+    <color name="grey">#aaa</color>
+    <color name="transparent">#00000000</color>
+    <color name="color_transparent">#bb000000</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="background">@color/white</color>
+    <color name="color_status">#252525</color>
+    <color name="color_primary">@color/white</color>
+    <color name="color_on_primary">@color/black</color>
+
+    <color name="quote_bottom_pallete_color">#252525</color>
+
+    <color name="ripple_white">#96ffffff</color>
+    <color name="reader_text_color">#999999</color>
+    <color name="reader_text_highlightcolor">#ddd</color>
+
+    <color name="color27">#f4a14e</color>
+</resources>

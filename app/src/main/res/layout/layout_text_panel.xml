@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_extra_panel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@color/quote_bottom_pallete_color"
+    android:padding="8dp">
+
+    <RelativeLayout
+        android:id="@+id/reader_header_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:minHeight="35dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/reader_header_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/primary_font"
+                    android:foreground="@drawable/ripple"
+                    android:gravity="center"
+                    android:text="Size"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/reader_text_highlightcolor"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/reader_header_color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/primary_font"
+                    android:foreground="@drawable/ripple"
+                    android:gravity="center"
+                    android:text="Color"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/reader_text_color"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/reader_header_font"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/primary_font"
+                    android:foreground="@drawable/ripple"
+                    android:gravity="center"
+
+                    android:text="Font"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/reader_text_color"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/reader_header_alignment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/primary_font"
+                    android:foreground="@drawable/ripple"
+                    android:gravity="center"
+                    android:minWidth="36dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/reader_alignment"
+                    android:textColor="@color/reader_text_color"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/reader_header_bg_background"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/primary_font"
+                    android:foreground="@drawable/ripple"
+                    android:gravity="center"
+                    android:minWidth="36dp"
+                    android:maxLines="1"
+                    android:text="@string/reader_background"
+                    android:textColor="@color/reader_text_color"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/reader_header_bg_opacity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:fontFamily="@font/primary_font"
+                    android:foreground="@drawable/ripple"
+                    android:gravity="center"
+                    android:minWidth="36dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/reader_opacity"
+                    android:textColor="@color/reader_text_color"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reader_header_layout"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/reader_background_sublayout_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:padding="8dp"
+                tools:visibility="visible">
+
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="15dp"
+                    android:fontFamily="@font/primary_font"
+                    android:gravity="center_vertical"
+                    android:text="@string/reader_background"
+                    android:textColor="@color/reader_text_highlightcolor"
+                    android:textSize="13sp" />
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="start">
+
+                  <LinearLayout
+                      android:id="@+id/reader_background_color"
+                      android:layout_width="0dp"
+                      android:layout_weight="1"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:gravity="center"
+                      android:background="?attr/actionBarItemBackground">
+
+                      <androidx.appcompat.widget.AppCompatImageView
+                          android:layout_width="@dimen/detail_panel_background_icon_size"
+                          android:layout_height="@dimen/detail_panel_background_icon_size"
+                          app:srcCompat="@drawable/ic_bg_color"
+                          app:tint="@color/reader_text_color"/>
+
+                      <com.google.android.material.textview.MaterialTextView
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="color"
+                          android:textSize="12sp"
+                          android:fontFamily="@font/primary_font"
+                          android:textColor="@color/reader_text_color" />
+                  </LinearLayout>
+
+                  <LinearLayout
+                      android:id="@+id/reader_background_images"
+                      android:background="?attr/actionBarItemBackground"
+                      android:layout_width="0dp"
+                      android:layout_weight="1"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:gravity="center"
+                      android:layout_marginStart="@dimen/detail_panel_background_icon_margin"
+                      android:layout_marginLeft="@dimen/detail_panel_background_icon_margin">
+
+                      <androidx.appcompat.widget.AppCompatImageView
+                          android:layout_width="@dimen/detail_panel_background_icon_size"
+                          android:layout_height="@dimen/detail_panel_background_icon_size"
+                          app:srcCompat="@drawable/ic_bg_img_list"
+                          app:tint="@color/reader_text_color"/>
+
+                      <com.google.android.material.textview.MaterialTextView
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="Images"
+                          android:textSize="12sp"
+                          android:fontFamily="@font/primary_font"
+                          android:textColor="@color/reader_text_color" />
+                  </LinearLayout>
+
+                  <LinearLayout
+                      android:id="@+id/reader_background_gallery"
+                      android:background="?attr/actionBarItemBackground"
+                      android:layout_width="0dp"
+                      android:layout_weight="1"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:gravity="center"
+                      android:layout_marginStart="@dimen/detail_panel_background_icon_margin"
+                      android:layout_marginLeft="@dimen/detail_panel_background_icon_margin">
+
+                      <androidx.appcompat.widget.AppCompatImageView
+                          android:layout_width="@dimen/detail_panel_background_icon_size"
+                          android:layout_height="@dimen/detail_panel_background_icon_size"
+                          app:srcCompat="@drawable/ic_bg_gallery"
+                          app:tint="@color/reader_text_color"/>
+
+                      <com.google.android.material.textview.MaterialTextView
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="Gallery"
+                          android:textSize="12sp"
+                          android:fontFamily="@font/primary_font"
+                          android:textColor="@color/reader_text_color" />
+                  </LinearLayout>
+              </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/reader_textsize_sublayout_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                tools:visibility="gone"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="15dp"
+                    android:fontFamily="@font/primary_font"
+                    android:gravity="center_vertical"
+                    android:text="@string/reader_text_size"
+                    android:textColor="@color/reader_text_highlightcolor"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/readersettings_smaller_text"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_read_font_a1"
+                    android:fontFamily="@font/primary_font"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:text="A-"
+                    android:textColor="@color/reader_text_color"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/readersettings_textSize"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:fontFamily="@font/primary_font"
+                    android:gravity="center"
+                    android:text="17"
+                    android:textColor="@color/reader_text_color"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/readersettings_larger_text"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_read_font_a2"
+                    android:fontFamily="@font/primary_font"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:text="A+"
+                    android:textColor="@color/reader_text_color"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/reader_textcolor_sublayout_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="15dp"
+                    android:fontFamily="@font/primary_font"
+                    android:gravity="center_vertical"
+                    android:text="@string/reader_theme"
+                    android:textColor="@color/reader_text_highlightcolor"
+                    android:textSize="13sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/readersettings_theme_rv_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/reader_textfont_sublayout_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="15dp"
+                    android:fontFamily="@font/primary_font"
+                    android:gravity="center_vertical"
+                    android:text="@string/reader_font"
+                    android:textColor="@color/reader_text_highlightcolor"
+                    android:textSize="13sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/readersettings_font_rv_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/reader_textAlignemnt_sublayout_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="15dp"
+                    android:fontFamily="@font/primary_font"
+                    android:gravity="center_vertical"
+                    android:text="@string/reader_alignment"
+                    android:textColor="@color/reader_text_highlightcolor"
+                    android:textSize="13sp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/reader_textAlignemnt_left_id"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginRight="17dp"
+                    android:background="?attr/actionBarItemBackground"
+                    android:gravity="center_vertical"
+                    app:srcCompat="@drawable/ic_textalign_left" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/reader_textAlignemnt_center_id"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginRight="17dp"
+                    android:background="?attr/actionBarItemBackground"
+                    android:gravity="center_vertical"
+                    app:srcCompat="@drawable/ic_textalign_center" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/reader_textAlignemnt_right_id"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginRight="17dp"
+                    android:background="?attr/actionBarItemBackground"
+                    android:gravity="center_vertical"
+                    app:srcCompat="@drawable/ic_textalign_right" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/reader_textAlignemnt_underline_id"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginEnd="17dp"
+                    android:layout_marginRight="17dp"
+                    android:background="?attr/actionBarItemBackground"
+                    android:gravity="center_vertical"
+                    app:srcCompat="@drawable/ic_textalign_underline" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/reader_textAlignemnt_allcaps_id"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginEnd="17dp"
+                    android:layout_marginRight="17dp"
+                    android:background="?attr/actionBarItemBackground"
+                    android:gravity="center_vertical"
+                    android:src="@drawable/ic_all_caps" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/reader_bgopacity_sublayout_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="15dp"
+                    android:fontFamily="@font/primary_font"
+                    android:gravity="center_vertical"
+                    android:text="@string/reader_bg_opacity"
+                    android:textColor="@color/reader_text_highlightcolor"
+                    android:textSize="13sp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/reader__bg_opacity_increase_id"
+                    android:layout_width="70dp"
+                    android:layout_height="28dp"
+                    android:layout_marginRight="17dp"
+                    android:background="?attr/actionBarItemBackground"
+                    android:gravity="center_vertical"
+                    app:srcCompat="@drawable/ic_baseline_brightness_low_24" />
+
+                <TextView
+                    android:id="@+id/readersettings_opacity_val_text"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:fontFamily="@font/primary_font"
+                    android:gravity="center"
+                    android:textColor="@color/reader_text_color"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/reader__bg_opacity_decrease_id"
+                    android:layout_width="70dp"
+                    android:layout_height="28dp"
+                    android:layout_marginRight="17dp"
+                    android:background="?attr/actionBarItemBackground"
+                    android:gravity="center_vertical"
+                    app:srcCompat="@drawable/ic_baseline_brightness_high_24" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

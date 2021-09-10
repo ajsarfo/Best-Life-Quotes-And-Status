@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="layout_category_card_margin">10dp</dimen>
+    <dimen name="layout_category_card_height">100dp</dimen>
+
+    <dimen name="layout_quote_upper_height">240dp</dimen>
+
+    <dimen name="detail_panel_background_icon_size">22dp</dimen>
+    <dimen name="detail_panel_background_icon_margin">16dp</dimen>
+
+    <dimen name="icon_detail_edit_size">26dp</dimen>
+    <dimen name="icon_detail_lower_saving_size">26dp</dimen>
+    <dimen name="icon_detail_lower_normal_size">26dp</dimen>
+
+    <dimen name="icon_detail_lower_normal_margin_right">16dp</dimen>
+
+    <dimen name="icon_detail_lower_margin_left">18dp</dimen>
+    <dimen name="layout_detail_lower_height">60dp</dimen>
+
+    <dimen name="icon_detail_lower_margin_right">18dp</dimen>
+
+    <dimen name="detail_image_item_size">100dp</dimen>
+</resources>

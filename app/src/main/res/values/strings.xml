@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Life Quotes &amp; Status</string>
+
+    <string name="appodeal_id">2bc5cbd9d75bfe254841c9bd199303333e8f5dadc53d32b1</string>
+    <string name="reader_alignment">Alignment</string>
+    <string name="reader_background">Background</string>
+    <string name="reader_text_size">Text size</string>
+
+    <string name="reader_theme">Text color</string>
+    <string name="reader_font">Font style</string>
+    <string name="reader_bg_opacity">Opacity</string>
+    <string name="reader_opacity">Opacity</string>
+
+    <string name="app_share_message">"Hi! Take a look at this amazing app Life Quotes &amp; Status. Its free!! You should get it too."</string>
+</resources>

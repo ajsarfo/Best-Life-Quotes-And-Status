@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable-v24/ic_edit.xml" value="0.2337719298245614" />
+        <entry key="app/src/main/res/drawable-v24/ripple.xml" value="0.2337719298245614" />
+        <entry key="app/src/main/res/drawable-v24/transparent_dark_layer.xml" value="0.27760416666666665" />
+        <entry key="app/src/main/res/drawable/border_search_home.xml" value="0.27760416666666665" />
+        <entry key="app/src/main/res/drawable/contact_edit_field_background.xml" value="0.2337719298245614" />
+        <entry key="app/src/main/res/drawable/contact_submit_background.xml" value="0.2337719298245614" />
+        <entry key="app/src/main/res/drawable/cursor_drawable.xml" value="0.27760416666666665" />
+        <entry key="app/src/main/res/drawable/font_card_shape.xml" value="0.2337719298245614" />
+        <entry key="app/src/main/res/drawable/ic_arrow_upward.xml" value="0.24675925925925926" />
+        <entry key="app/src/main/res/drawable/ic_back.xml" value="0.24675925925925926" />
+        <entry key="app/src/main/res/drawable/ic_baseline_brightness_high_24.xml" value="0.2337719298245614" />
+        <entry key="app/src/main/res/drawable/ic_bg_color.xml" value="0.2337719298245614" />
+        <entry key="app/src/main/res/drawable/ic_check_true.xml" value="0.2337719298245614" />
+        <entry key="app/src/main/res/drawable/ic_close.xml" value="0.2337719298245614" />
+        <entry key="app/src/main/res/drawable/ic_close_search.xml" value="0.27760416666666665" />
+        <entry key="app/src/main/res/drawable/ic_color_card_check.xml" value="0.2337719298245614" />
+        <entry key="app/src/main/res/drawable/ic_content_copy.xml" value="0.24675925925925926" />
+        <entry key="app/src/main/res/drawable/ic_edit.xml" value="0.2337719298245614" />
+        <entry key="app/src/main/res/drawable/ic_favorite_border.xml" value="0.24675925925925926" />
+        <entry key="app/src/main/res/drawable/ic_file_download.xml" value="0.2337719298245614" />
+        <entry key="app/src/main/res/drawable/ic_menu.xml" value="0.27760416666666665" />
+        <entry key="app/src/main/res/drawable/ic_search.xml" value="0.27760416666666665" />
+        <entry key="app/src/main/res/drawable/ic_share_black_24dp.xml" value="0.2337719298245614" />
+        <entry key="app/src/main/res/drawable/ripple.xml" value="0.2337719298245614" />
+        <entry key="app/src/main/res/layout/activity_contact.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_contact_us.xml" value="0.22017543859649122" />
+        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_quote.xml" value="0.2324074074074074" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.22017543859649122" />
+        <entry key="app/src/main/res/layout/layout_app_preparation_dialog.xml" value="0.22017543859649122" />
+        <entry key="app/src/main/res/layout/layout_back_dialog.xml" value="0.21" />
+        <entry key="app/src/main/res/layout/layout_category.xml" value="0.26145833333333335" />
+        <entry key="app/src/main/res/layout/layout_color_card.xml" value="0.22017543859649122" />
+        <entry key="app/src/main/res/layout/layout_detail_image.xml" value="0.22017543859649122" />
+        <entry key="app/src/main/res/layout/layout_detail_image_dialog.xml" value="0.22017543859649122" />
+        <entry key="app/src/main/res/layout/layout_detail_lower.xml" value="0.22017543859649122" />
+        <entry key="app/src/main/res/layout/layout_detail_pager.xml" value="0.22017543859649122" />
+        <entry key="app/src/main/res/layout/layout_detail_upper.xml" value="0.22017543859649122" />
+        <entry key="app/src/main/res/layout/layout_detial_dialog.xml" value="0.22017543859649122" />
+        <entry key="app/src/main/res/layout/layout_drawer_header.xml" value="0.22017543859649122" />
+        <entry key="app/src/main/res/layout/layout_font_card.xml" value="0.22017543859649122" />
+        <entry key="app/src/main/res/layout/layout_quote.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/layout_text_panel.xml" value="0.22017543859649122" />
+        <entry key="app/src/main/res/menu/menu_nav.xml" value="0.19609375" />
+        <entry key="app/src/main/res/menu/menu_toolbar.xml" value="0.19609375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

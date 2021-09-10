@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+   <group android:id="@+id/main">
+       <item
+           android:id="@+id/favorite"
+           android:title="Liked Quotes"
+           android:icon="@drawable/ic_favorite_red"/>
+
+       <item
+           android:id="@+id/quote_of_the_day"
+           android:title="Quote of the day"
+           android:icon="@drawable/ic_menu_quote"/>
+   </group>
+
+    <item android:title="Settings">
+        <menu>
+            <item
+                android:id="@+id/sound"
+                android:title="Tap Sound"
+                android:icon="@drawable/ic_menu_sound"
+                app:actionViewClass="androidx.appcompat.widget.SwitchCompat"/>
+
+            <item
+                android:id="@+id/dark_mode"
+                android:title="Dark Mode"
+                android:icon="@drawable/ic_menu_dark_mode"
+                app:actionViewClass="androidx.appcompat.widget.SwitchCompat"/>
+        </menu>
+    </item>
+  <item android:id="@+id/optional"
+      android:title="Communicate">
+
+     <menu>
+         <item
+             android:id="@+id/contact_us"
+             android:title="Contact Us"
+             android:icon="@drawable/ic_menu_contact"/>
+
+         <item
+             android:id="@+id/rate_us"
+             android:title="Rate Us"
+             android:icon="@drawable/ic_menu_rate"/>
+
+         <item
+             android:id="@+id/share_app"
+             android:title="Share App"
+             android:icon="@drawable/ic_menu_share"/>
+
+         <item
+             android:id="@+id/more_apps"
+             android:title="More Apps"
+             android:icon="@drawable/ic_menu_more_apps"/>
+     </menu>
+  </item>
+</menu>

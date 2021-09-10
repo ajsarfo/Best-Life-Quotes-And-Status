@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="binding"
+            type="com.sarftec.lifequotesandstatus.presentation.dialog.ShareDialog.ImageSelectionDialogBinding" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/primary_font"
+            android:text="@{binding.shareBinding.title}"
+            android:textColor="@color/color_on_primary"
+            android:textSize="23sp"
+            android:textStyle="bold"
+
+            tools:text="choose from" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:background="?attr/selectableItemBackground"
+            android:minHeight="48dp"
+            android:onClick="@{() -> binding.onOption1()}">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/option_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:fontFamily="@font/primary_font"
+                android:text="@{binding.shareBinding.option1}"
+                android:textColor="@color/color_on_primary"
+                android:textSize="18sp"
+                tools:text="As Background" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:background="?attr/selectableItemBackground"
+            android:minHeight="48dp"
+            android:onClick="@{() -> binding.onOption2()}">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/option_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/primary_font"
+                android:onClick="@{() -> binding.onOption2()}"
+                android:text="@{binding.shareBinding.option2}"
+                android:textColor="@color/color_on_primary"
+                android:textSize="18sp"
+                tools:text="As Text" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>
