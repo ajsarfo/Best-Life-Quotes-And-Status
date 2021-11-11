@@ -7,7 +7,6 @@ import androidx.activity.viewModels
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.lifecycle.lifecycleScope
 import androidx.viewpager2.widget.ViewPager2
-import com.appodeal.ads.Appodeal
 import com.jaredrummler.android.colorpicker.ColorPickerDialog
 import com.jaredrummler.android.colorpicker.ColorPickerDialogListener
 import com.sarftec.lifequotesandstatus.R
@@ -17,7 +16,7 @@ import com.sarftec.lifequotesandstatus.editSettings
 import com.sarftec.lifequotesandstatus.presentation.adapter.DetailImageAdapter
 import com.sarftec.lifequotesandstatus.presentation.adapter.DetailPagerAdapter
 import com.sarftec.lifequotesandstatus.presentation.advertisement.AdCountManager
-import com.sarftec.lifequotesandstatus.presentation.advertisement.InterstitialManager
+import com.sarftec.lifequotesandstatus.presentation.advertisement.BannerManager
 import com.sarftec.lifequotesandstatus.presentation.binding.ShareDialogBinding
 import com.sarftec.lifequotesandstatus.presentation.dialog.ImageChooserDialog
 import com.sarftec.lifequotesandstatus.presentation.dialog.ShareDialog
@@ -41,14 +40,6 @@ class DetailActivity : BaseActivity(), ColorPickerDialogListener {
     private val layoutBinding by lazy {
         ActivityDetailBinding.inflate(
             layoutInflater
-        )
-    }
-
-    private val interstitialManager by lazy {
-        InterstitialManager(
-            this,
-            networkManager,
-            listOf(1, 3)
         )
     }
 
@@ -93,7 +84,7 @@ class DetailActivity : BaseActivity(), ColorPickerDialogListener {
                     }
                 },
                 onOption2 = {
-                    interstitialManager.customShowAd {
+                    interstitialManager?.customShowAd {
                         shareBackgroundImage()
                     }
                 }
@@ -113,22 +104,26 @@ class DetailActivity : BaseActivity(), ColorPickerDialogListener {
         ImageChooserDialog(layoutBinding.root, imageAdapter)
     }
 
+    override fun createAdCounterManager(): AdCountManager {
+        return AdCountManager(listOf(1, 3))
+    }
+
     override fun onBackPressed() {
-        if(canShowInterstitialAd()) interstitialManager.customShowAd {
+        if(canShowInterstitialAd()) interstitialManager?.customShowAd {
             super.onBackPressed()
         }
         else super.onBackPressed()
     }
 
-    override fun onResume() {
-        super.onResume()
-        Appodeal.show(this, Appodeal.BANNER_VIEW)
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(layoutBinding.root)
-        Appodeal.setBannerViewId(R.id.main_banner)
+        /*************** Admob Configuration ********************/
+        BannerManager(this, adRequestBuilder).attachBannerAd(
+            getString(R.string.admob_banner_detail),
+            layoutBinding.mainBanner
+        )
+        /**********************************************************/
         imageStore.reload()
         savedInstanceState ?: kotlin.run {
             intent?.getParcelableExtra<QuoteToDetail>(ACTIVITY_PARCEL)?.let {

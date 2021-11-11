@@ -2,12 +2,16 @@ package com.sarftec.lifequotesandstatus.presentation.activity
 
 import android.content.Intent
 import android.os.Build
+import android.os.Bundle
 import android.os.Parcelable
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.google.android.gms.ads.AdRequest
 import com.sarftec.lifequotesandstatus.R
 import com.sarftec.lifequotesandstatus.presentation.Dependency
+import com.sarftec.lifequotesandstatus.presentation.advertisement.AdCountManager
+import com.sarftec.lifequotesandstatus.presentation.advertisement.InterstitialManager
 import com.sarftec.lifequotesandstatus.presentation.image.ImageStore
 import com.sarftec.lifequotesandstatus.presentation.manager.NetworkManager
 import com.sarftec.lifequotesandstatus.presentation.sound.SoundManager
@@ -28,9 +32,35 @@ abstract class BaseActivity : AppCompatActivity() {
         Dependency(this,lifecycleScope, imageStore, soundManager)
     }
 
+    protected val adRequestBuilder: AdRequest by lazy {
+        AdRequest.Builder().build()
+    }
+
+    protected var interstitialManager: InterstitialManager? = null
+
+    protected open fun canShowInterstitial() : Boolean = true
+
+    protected open fun createAdCounterManager() : AdCountManager {
+        return AdCountManager(listOf(1, 4, 3))
+    }
+
     override fun onStart() {
         super.onStart()
         imageStore.reload()
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        //Load interstitial if required by extending activity
+        if(!canShowInterstitial()) return
+        interstitialManager = InterstitialManager(
+            this,
+            getString(R.string.admob_interstitial_id),
+            networkManager,
+            createAdCounterManager(),
+            adRequestBuilder
+        )
+        interstitialManager?.load()
     }
 
     protected fun <T> navigateTo(

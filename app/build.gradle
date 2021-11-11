@@ -13,8 +13,8 @@ android {
         applicationId "com.sarftec.lifequotesandstatus"
         minSdk 16
         targetSdk 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "2.1"
 
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
@@ -85,13 +85,8 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.preference:preference-ktx:1.1.1'
 
-    //Dependencies for appodeal
-    implementation 'com.appodeal.ads.sdk.networks:admob:2.10.2.13'
-    implementation 'com.appodeal.ads.sdk:core:2.10.2'
-    implementation 'com.appodeal.ads.sdk.networks:appodeal:2.10.2.2'
-    implementation 'com.appodeal.ads.sdk.networks:mraid:2.10.2.3'
-    implementation 'com.appodeal.ads.sdk.networks:nast:2.10.2.2'
-    implementation 'com.appodeal.ads.sdk.networks:vast:2.10.2.3'
+    //Dependencies for admob
+    implementation 'com.google.android.gms:play-services-ads:20.4.0'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

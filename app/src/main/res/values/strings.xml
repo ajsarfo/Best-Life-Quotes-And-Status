@@ -12,4 +12,29 @@
     <string name="reader_opacity">Opacity</string>
 
     <string name="app_share_message">"Hi! Take a look at this amazing app Life Quotes &amp; Status. Its free!! You should get it too."</string>
+
+    <string name="admob_test_banner_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="admob_test_interstitial_id">ca-app-pub-3940256099942544/1033173712</string>
+
+
+    <!--
+    <string name="admob_banner_main">@string/admob_test_banner_id</string>
+    <string name="admob_banner_quote">@string/admob_test_banner_id</string>
+    <string name="admob_banner_category">@string/admob_test_banner_id</string>
+    <string name="admob_banner_favorite">@string/admob_test_banner_id</string>
+    <string name="admob_banner_detail">@string/admob_test_banner_id</string>
+
+    <string name="admob_interstitial_id">@string/admob_test_interstitial_id</string>
+    -->
+
+
+    <string name="admob_banner_main">ca-app-pub-6150813452529727/6577326188</string>
+    <string name="admob_banner_quote">ca-app-pub-6150813452529727/9920523447</string>
+    <string name="admob_banner_detail">ca-app-pub-6150813452529727/7507264477</string>
+    <string name="admob_banner_category">ca-app-pub-6150813452529727/9941856129</string>
+    <string name="admob_banner_favorite">ca-app-pub-6150813452529727/4689529443</string>
+    <string name="admob_banner_image">@string/admob_test_banner_id</string>
+
+    <string name="admob_interstitial_id">ca-app-pub-6150813452529727/7124121090</string>
+
 </resources>

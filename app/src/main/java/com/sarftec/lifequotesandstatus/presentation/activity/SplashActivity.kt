@@ -7,6 +7,7 @@ import android.graphics.Typeface
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import androidx.appcompat.app.AppCompatActivity
 import com.sarftec.lifequotesandstatus.R
 import com.sarftec.lifequotesandstatus.databinding.ActivitySplashBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -17,6 +18,8 @@ class SplashActivity : BaseActivity() {
     override fun onBackPressed() {
         super.finish()
     }
+
+    override fun canShowInterstitial(): Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

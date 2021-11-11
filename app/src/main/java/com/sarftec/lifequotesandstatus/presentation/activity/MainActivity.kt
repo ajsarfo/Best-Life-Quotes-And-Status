@@ -14,15 +14,14 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.appodeal.ads.Appodeal
-import com.appodeal.ads.Native
 import com.sarftec.lifequotesandstatus.R
 import com.sarftec.lifequotesandstatus.data.disk.DataSetup
 import com.sarftec.lifequotesandstatus.databinding.ActivityMainBinding
 import com.sarftec.lifequotesandstatus.databinding.LayoutBackDialogBinding
 import com.sarftec.lifequotesandstatus.editSettings
 import com.sarftec.lifequotesandstatus.presentation.adapter.CategoryAdapter
-import com.sarftec.lifequotesandstatus.presentation.advertisement.InterstitialManager
+import com.sarftec.lifequotesandstatus.presentation.advertisement.AdCountManager
+import com.sarftec.lifequotesandstatus.presentation.advertisement.BannerManager
 import com.sarftec.lifequotesandstatus.presentation.dialog.BackDialog
 import com.sarftec.lifequotesandstatus.presentation.manager.AppReviewManager
 import com.sarftec.lifequotesandstatus.presentation.parcel.CategoryToQuote
@@ -52,7 +51,7 @@ class MainActivity : BaseActivity() {
 
     private val categoryAdapter by lazy {
         CategoryAdapter(dependency) {
-           interstitialManager.showAd {
+           interstitialManager?.showAd {
                navigateTo(
                    QuoteActivity::class.java,
                    parcel = CategoryToQuote(it.id, it.name)
@@ -62,18 +61,6 @@ class MainActivity : BaseActivity() {
     }
 
     private var drawerCallback: (() -> Unit)? = null
-
-    //Trivial and would be removed
-    @Inject
-    lateinit var dataSetup: DataSetup
-
-    private val interstitialManager by lazy {
-        InterstitialManager(
-            this,
-            networkManager,
-            listOf(1, 3, 4, 3)
-        )
-    }
 
     private val backDialog by lazy {
         BackDialog(
@@ -92,25 +79,24 @@ class MainActivity : BaseActivity() {
         AppReviewManager(this)
     }
 
+    override fun createAdCounterManager(): AdCountManager {
+        return AdCountManager( listOf(1, 3, 4, 3))
+    }
+
     override fun onResume() {
         super.onResume()
-        Appodeal.show(this, Appodeal.BANNER_VIEW)
         modifiedQuoteList.clear()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        /**************Set up appodeal configuration*****************/
-        Appodeal.setBannerViewId(R.id.main_banner)
-        Appodeal.initialize(
-            this,
-            getString(R.string.appodeal_id),
-            Appodeal.BANNER_VIEW or Appodeal.INTERSTITIAL or Appodeal.NATIVE
+        /*************** Admob Configuration ********************/
+        BannerManager(this, adRequestBuilder).attachBannerAd(
+            getString(R.string.admob_banner_main),
+            binding.mainBanner
         )
-        Appodeal.setNativeAdType(Native.NativeAdType.NoVideo)
-        Appodeal.cache(this, Appodeal.NATIVE, 1)
-        /*************************************************************/
+        /**********************************************************/
         setupNavDrawer()
         setupNavView()
         setupRecyclerView()
@@ -136,7 +122,7 @@ class MainActivity : BaseActivity() {
     }
 
     private fun showBackDialog() {
-        backDialog.showBackDialog(Appodeal.getNativeAds(1).firstOrNull())
+        backDialog.showBackDialog()
     }
 
     private fun observeLiveData() {
@@ -301,7 +287,7 @@ class MainActivity : BaseActivity() {
                 R.id.quote_of_the_day -> {
                     dependency.playSound(SoundManager.Sound.TAP)
                     onDrawerCallback {
-                       interstitialManager.customShowAd {
+                       interstitialManager?.customShowAd {
                            navigateTo(
                                DetailActivity::class.java,
                                parcel = QuoteToDetail(
@@ -340,7 +326,7 @@ class MainActivity : BaseActivity() {
                 R.id.contact_us -> {
                     dependency.playSound(SoundManager.Sound.TAP)
                     onDrawerCallback {
-                        interstitialManager.customShowAd {
+                        interstitialManager?.customShowAd {
                             navigateTo(ContactActivity::class.java)
                         }
                     }

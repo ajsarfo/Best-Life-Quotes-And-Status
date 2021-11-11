@@ -2,7 +2,6 @@ package com.sarftec.lifequotesandstatus.presentation.dialog
 
 import android.app.AlertDialog
 import android.view.View
-import com.appodeal.ads.NativeAd
 import com.sarftec.lifequotesandstatus.databinding.LayoutBackDialogBinding
 
 class BackDialog(
@@ -28,15 +27,5 @@ class BackDialog(
         setView(binding.root)
     }
 
-    fun showBackDialog(ad: NativeAd?) {
-        if(ad == null) {
-            show()
-            return
-        }
-        binding.apply {
-            frameAdContainer.visibility = View.VISIBLE
-            nativeAd.setNativeAd(ad)
-        }
-        show()
-    }
+    fun showBackDialog() = show()
 }

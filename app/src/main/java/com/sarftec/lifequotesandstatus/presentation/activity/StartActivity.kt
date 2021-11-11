@@ -23,6 +23,8 @@ class StartActivity : BaseActivity() {
         PreparationDialog(this)
     }
 
+    override fun canShowInterstitial(): Boolean = false
+
     override fun onBackPressed() {
         super.finish()
     }

@@ -17,6 +17,8 @@ class ContactActivity : BaseActivity() {
         )
     }
 
+    override fun canShowInterstitial(): Boolean = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)

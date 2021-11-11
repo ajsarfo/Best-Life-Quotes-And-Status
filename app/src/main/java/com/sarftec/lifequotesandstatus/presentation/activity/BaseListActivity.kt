@@ -2,8 +2,6 @@ package com.sarftec.lifequotesandstatus.presentation.activity
 
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.appodeal.ads.Appodeal
-import com.sarftec.lifequotesandstatus.R
 import com.sarftec.lifequotesandstatus.databinding.ActivityQuoteBinding
 import com.sarftec.lifequotesandstatus.presentation.adapter.QuoteAdapter
 import com.sarftec.lifequotesandstatus.presentation.handler.ReadWriteHandler
@@ -28,14 +26,12 @@ abstract class BaseListActivity : BaseActivity() {
 
     override fun onResume() {
         super.onResume()
-        Appodeal.show(this, Appodeal.BANNER_VIEW)
         runOnResume()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(layoutBinding.root)
-        Appodeal.setBannerViewId(R.id.main_banner)
         imageStore.reload()
         readWriteHandler = ReadWriteHandler(this)
         runInit(savedInstanceState)
